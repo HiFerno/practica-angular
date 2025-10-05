@@ -1,0 +1,57 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+          <h2 class="h4 mb-0">NERV - Actualizar Estado de Orden</h2>
+        </div>
+        <div class="card-body p-4">
+          <div class="input-group mb-4">
+            <input type="text" class="form-control" placeholder="Ingrese el Número de Paquete (ej: NRV-1234)" [(ngModel)]="numeroPaqueteBuscado">
+            <button class="btn btn-outline-primary" type="button" (click)="buscarPaquete()">Buscar</button>
+          </div>
+
+          <div *ngIf="paqueteActual">
+            <div class="alert alert-secondary">
+              <p class="mb-1"><strong>Remitente:</strong> {{ paqueteActual.nombreRemitente }}</p>
+              <p class="mb-0"><strong>Dirección:</strong> {{ paqueteActual.direccionEntrega.calle }}, Zona {{ paqueteActual.direccionEntrega.zona }}</p>
+              <p class="mb-0"><strong>Estado Actual:</strong> <span class="fw-bold">{{ paqueteActual.estado }}</span></p>
+            </div>
+
+            <form (ngSubmit)="actualizarEstado()" #updateForm="ngForm">
+              <div class="mb-3">
+                <label for="nuevoEstado" class="form-label">Seleccionar Nuevo Estado</label>
+                <select id="nuevoEstado" class="form-select" name="nuevoEstado" [(ngModel)]="modeloActualizacion.nuevoEstado" required>
+                  <option *ngIf="estadosDisponibles.length === 0" disabled>No hay más estados disponibles</option>
+                  <option *ngFor="let estado of estadosDisponibles" [value]="estado">{{ estado }}</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="comentario" class="form-label">Comentario de la Actualización</label>
+                <input type="text" id="comentario" class="form-control" name="comentario" [(ngModel)]="modeloActualizacion.comentario"
+                       required minlength="20" maxlength="40" #comentario="ngModel">
+                
+                <div *ngIf="comentario.invalid && (comentario.dirty || comentario.touched)" class="text-danger small mt-1">
+                    <div *ngIf="comentario.errors?.['required']">El comentario es requerido.</div>
+                    <div *ngIf="comentario.errors?.['minlength']">El comentario debe tener al menos 20 caracteres.</div>
+                    <div *ngIf="comentario.errors?.['maxlength']">El comentario no puede exceder los 40 caracteres.</div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="responsable" class="form-label">Nombre del Responsable</label>
+                <input type="text" id="responsable" class="form-control" name="responsable" [(ngModel)]="modeloActualizacion.responsable"
+                       required pattern="[a-zA-Z\s]*">
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary" [disabled]="!updateForm.form.valid || estadosDisponibles.length === 0">Actualizar Estado</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
