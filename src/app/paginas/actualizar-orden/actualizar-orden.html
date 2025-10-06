@@ -30,7 +30,7 @@
               <div class="mb-3">
                 <label for="comentario" class="form-label">Comentario de la Actualización</label>
                 <input type="text" id="comentario" class="form-control" name="comentario" [(ngModel)]="modeloActualizacion.comentario"
-                       required minlength="20" maxlength="40" #comentario="ngModel">
+                      required minlength="20" maxlength="40" #comentario="ngModel">
                 
                 <div *ngIf="comentario.invalid && (comentario.dirty || comentario.touched)" class="text-danger small mt-1">
                     <div *ngIf="comentario.errors?.['required']">El comentario es requerido.</div>
@@ -42,7 +42,7 @@
               <div class="mb-3">
                 <label for="responsable" class="form-label">Nombre del Responsable</label>
                 <input type="text" id="responsable" class="form-control" name="responsable" [(ngModel)]="modeloActualizacion.responsable"
-                       required pattern="[a-zA-Z\s]*">
+                        required pattern="[a-zA-Z\s]*">
               </div>
 
               <div class="d-grid">
