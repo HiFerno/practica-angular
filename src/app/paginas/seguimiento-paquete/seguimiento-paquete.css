@@ -1,0 +1,12 @@
+.card-header {
+    background-color: var(--primary);
+    color: white;
+}
+
+.list-group-item:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.badge {
+    font-size: 1rem;
+}

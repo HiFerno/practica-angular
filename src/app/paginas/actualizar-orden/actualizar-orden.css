@@ -1,0 +1,13 @@
+.card-header {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.form-label {
+    font-weight: bold;
+}

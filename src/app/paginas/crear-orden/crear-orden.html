@@ -10,7 +10,7 @@
             <div class="mb-3">
               <label for="nombreRemitente" class="form-label">Su Nombre Completo</label>
               <input type="text" id="nombreRemitente" class="form-control" name="nombreRemitente"
-                     [(ngModel)]="modelo.nombreRemitente" required pattern="[a-zA-Z\s]*" #nombreRemitente="ngModel">
+                    [(ngModel)]="modelo.nombreRemitente" required pattern="[a-zA-Z\s]*" #nombreRemitente="ngModel">
               <div *ngIf="nombreRemitente.invalid && (nombreRemitente.dirty || nombreRemitente.touched)" class="text-danger small mt-1">
                 <div *ngIf="nombreRemitente.errors?.['required']">El nombre es requerido.</div>
                 <div *ngIf="nombreRemitente.errors?.['pattern']">El nombre solo puede contener letras.</div>
@@ -22,29 +22,29 @@
               <div class="col-md-6 mb-3">
                 <label for="calle" class="form-label">Calle y Avenida</label>
                 <input type="text" id="calle" class="form-control" name="calle"
-                       [(ngModel)]="modelo.direccionEntrega.calle" required>
+                      [(ngModel)]="modelo.direccionEntrega.calle" required>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="zona" class="form-label">Zona</label>
                 <input type="text" id="zona" class="form-control" name="zona"
-                       [(ngModel)]="modelo.direccionEntrega.zona" required>
+                      [(ngModel)]="modelo.direccionEntrega.zona" required>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="municipio" class="form-label">Municipio</label>
                 <input type="text" id="municipio" class="form-control" name="municipio"
-                       [(ngModel)]="modelo.direccionEntrega.municipio" required>
+                      [(ngModel)]="modelo.direccionEntrega.municipio" required>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="departamento" class="form-label">Departamento</label>
                 <input type="text" id="departamento" class="form-control" name="departamento"
-                       [(ngModel)]="modelo.direccionEntrega.departamento" required>
+                      [(ngModel)]="modelo.direccionEntrega.departamento" required>
               </div>
             </div>
 
             <div class="mb-3">
               <label for="correo" class="form-label">Su Correo Electrónico</label>
               <input type="email" id="correo" class="form-control" name="correo"
-                     [(ngModel)]="modelo.correo" required pattern="^[a-zA-Z0-9._%+-]+@(gmail|outlook)\.com$">
+                    [(ngModel)]="modelo.correo" required pattern="^[a-zA-Z0-9._%+-]+@(gmail|outlook)\.com$">
               <div *ngIf="ordenForm.controls['correo']?.invalid && (ordenForm.controls['correo']?.dirty || ordenForm.controls['correo']?.touched)" class="text-danger small mt-1">
                 <div *ngIf="ordenForm.controls['correo']?.errors?.['required']">El correo es requerido.</div>
                 <div *ngIf="ordenForm.controls['correo']?.errors?.['pattern']">Solo se permiten dominios @gmail.com o @outlook.com.</div>

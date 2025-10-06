@@ -1,0 +1,10 @@
+body {
+    background-color: #f8f9fa;
+}
+
+:root {
+  --primary: #FF6600; /* Naranja */
+  --secondary: #f8f9fa;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
