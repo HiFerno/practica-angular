@@ -1,5 +1,5 @@
 .card-header {
-    background-color: var(--primary);
+    background-color: var(--primary) !important;
     color: rgb(255, 255, 255);
 }
 

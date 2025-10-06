@@ -1,0 +1,15 @@
+
+.navbar {
+    background-color: var(--primary) !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: white !important;
+}
+
+
+.navbar .nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
